@@ -1,1 +1,1 @@
-# Nuxt Typescript RealWorld example app
+# Nuxt TypeScript RealWorld example app
