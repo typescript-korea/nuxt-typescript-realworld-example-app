@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["es2015", "esnext", "dom"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["src/*"],
+      "@@/*": ["*"],
+      "~~/*": ["*"]
+    },
+    "allowJs": true,
+    // build environment
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": false,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    // decorators
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    //lint
+    "strict": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": true,
+    "noEmitHelpers": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false
+  },
+  "include": [
+    "src/**/*.(tsx?|vue|jsx?)",
+    "types/**/*.d.ts"
+  ]
+}
