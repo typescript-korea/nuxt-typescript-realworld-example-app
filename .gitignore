@@ -1,0 +1,39 @@
+## dependencies
+/node_modules
+/bower_components
+
+## logs
+npm-debug.log
+yarn-error.log
+test/unit/coverage
+selenium-debug.log
+/.nyc_output
+/coverage
+
+## Nuxt build
+/.nuxt
+/src/static/OneSignalSDKUpdaterWorker.js
+/src/static/OneSignalSDKWorker.js
+/src/static/sw.js
+
+## Nuxt generate
+/dist
+
+## .lock
+yarn.lock
+package-lock.json
+
+## Editor directories and files
+/.elasticbeanstalk/
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+
+# env config
+.env.js
+.deploy.env.js
+
+## old
+/.old
