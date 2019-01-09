@@ -9,7 +9,7 @@ export default function(options) {
     },
   } = options
 
-  // nuxt will not loader *.tsx? if the extensions has no ts, tsx
+  // nuxt will not load *.tsx? if the extensions has no ts, tsx
   this.nuxt.options.extensions.push('ts')
   this.nuxt.options.extensions.push('tsx')
 
