@@ -8,9 +8,11 @@ export default function(options) {
       presets: ['@nuxt/babel-preset-app'],
     },
   } = options
+
+  // nuxt will not loader *.tsx? if the extensions has no ts, tsx
   this.nuxt.options.extensions.push('ts')
   this.nuxt.options.extensions.push('tsx')
-  const dev = this.options.dev
+
   // Extend build
   this.extendBuild((config, {isDev}) => {
     const tsLoader = {
@@ -44,9 +46,7 @@ export default function(options) {
       test: /\.tsx?$/,
       ...tsLoader,
     })
-    if(dev){
-      config.devtool = 'inline-source-map'
-    }
+
     // Add TypeScript loader for vue files
     for(let rule of config.module.rules){
       if(rule.loader === 'vue-loader'){
@@ -56,14 +56,19 @@ export default function(options) {
         rule.options.loaders.ts = tsLoader
       }
     }
+
     // Add .ts extension in webpack resolve
     if(config.resolve.extensions.indexOf('.ts') === -1){
       config.resolve.extensions.push('.ts')
     }
+
+    // Add .tsx extension in webpack resolve
     if(config.resolve.extensions.indexOf('.tsx') === -1){
       config.resolve.extensions.push('.tsx')
     }
+
     if(isDev){
+      config.devtool = 'inline-source-map'
       config.plugins.push(new ForkTsCheckerWebpackPlugin({
         checkSyntacticErrors: true,
         tslint: true,
