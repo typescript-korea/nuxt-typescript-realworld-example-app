@@ -1,15 +1,16 @@
-/* eslint-disable no-magic-numbers */
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-import webpack from 'webpack'
-export default function(options) {
+import {esModule} from '../utils'
+export default async function(options) {
+  const webpack = esModule(await import('webpack'))
+  const ForkTsCheckerWebpackPlugin = esModule(await import('fork-ts-checker-webpack-plugin'))
   const {
     configFile = 'tsconfig.json',
     babel = {
       presets: ['@nuxt/babel-preset-app'],
+      plugins: ['lodash'],
     },
   } = options
 
-  // nuxt will not load *.tsx? if the extensions has no ts, tsx
+  // nuxt will not loader *.tsx? if the extensions has no ts, tsx
   this.nuxt.options.extensions.push('ts')
   this.nuxt.options.extensions.push('tsx')
 
@@ -17,11 +18,7 @@ export default function(options) {
   this.extendBuild((config, {isDev}) => {
     const tsLoader = {
       // refer to https://github.com/nuxt/nuxt.js/issues/3164
-      exclude: [
-        /node_modules/,
-        /vendor/,
-        /dist/,
-      ],
+      exclude: [/node_modules/, /vendor/, /dist/],
       use: [
         // go throw babel-loader after ts-loader
         {
@@ -69,17 +66,18 @@ export default function(options) {
 
     if(isDev){
       config.devtool = 'inline-source-map'
-      config.plugins.push(new ForkTsCheckerWebpackPlugin({
-        checkSyntacticErrors: true,
-        tslint: true,
-        vue: true,
-        watch: 'src',
-        silent: true,
-      }))
-      config.plugins.push(new webpack.WatchIgnorePlugin([
-        'src/**/*.js',
-        /\.d\.ts$/,
-      ]))
+
+      // refer to https://www.npmjs.com/package/fork-ts-checker-webpack-plugin
+      config.plugins.push(
+        new ForkTsCheckerWebpackPlugin({
+          checkSyntacticErrors: true,
+          tslint: true,
+          vue: true,
+          watch: 'src',
+          silent: true,
+        }),
+      )
+      config.plugins.push(new webpack.WatchIgnorePlugin(['src/**/*.js', /\.d\.ts$/]))
     }
   })
 }
