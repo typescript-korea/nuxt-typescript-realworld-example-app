@@ -1,15 +1,7 @@
 # Nuxt TypeScript RealWorld example app
 
-## Getting started
-
-```bash
-# install dependencies
-> npm install
-# or
-> yarn install
-
-# serve with hot reload at localhost:3000
-> npm dev
-# or
-> yarn dev
-```
+## Scripts
+- dev : Start Nuxt dev mode
+- build : Build Nuxt
+- start : Start Nuxt what is built
+- analyze : refer to nuxt -a 
