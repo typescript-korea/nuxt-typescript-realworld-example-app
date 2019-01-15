@@ -7,7 +7,7 @@
 > git clone git@github.com:typescript-korea/nuxt-typescript-realworld-example-app.git
 # go to the folder
 > cd ./nuxt-typescript-realworld-example-app.git
-# install dependencies (you can use `npm install` instead of `yarn`)
+# install dependencies (you can use `npm install` instead of Yarn)
 > yarn
 ```
 
