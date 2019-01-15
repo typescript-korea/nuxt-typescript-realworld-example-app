@@ -16,6 +16,7 @@ const config = {
           "width=device-width, initial-scale=1"
       },
     ],
+  },
   /**
    * Webpack build
    */
