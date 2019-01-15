@@ -32,6 +32,11 @@ const config = {
       },
     ],
   },
+
+  router: {
+    linkActiveClass: 'active'
+  },
+
   /**
    * Webpack build
    */
