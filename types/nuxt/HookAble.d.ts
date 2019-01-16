@@ -1,4 +1,4 @@
-export interface HookAble {
+export declare class HookAble {
   hook(name: any, fn: any): void
 
   clearHook(name: string): void
