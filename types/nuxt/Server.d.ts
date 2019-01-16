@@ -2,7 +2,13 @@ import {Listener} from './Listener'
 import {Nuxt} from './Nuxt'
 import {NuxtOptions} from './NuxtOptions'
 
-export declare class Server {
+export declare class ServerInNuxt {
+  renderAndGetWindow(url: string, jsdomOptions?: any): any
+  listen(port: any, host: any, socket?: any): Promise<any>
+  renderRoute(url: string, context?: any, retries?: number): any
+}
+
+export declare class Server extends ServerInNuxt {
     readonly nuxt: Nuxt
     readonly options: NuxtOptions
     readonly globals: any
@@ -22,13 +28,7 @@ export declare class Server {
 
     useMiddleware(middleware: any): void
 
-    renderRoute(url: string, context?: any, retries?: number): any
-
     loadResources(...any: any[]): any
-
-    renderAndGetWindow(url: string, jsdomOptions?: any): any
-
-    listen(port: any, host: any, socket?: any): Promise<any>
 
     close(): any
 }
