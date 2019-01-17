@@ -1,4 +1,4 @@
-import {join} from "path"
+import {join} from 'path'
 import {esModule} from '../utils'
 export default async function(options) {
   const webpack = esModule(await import('webpack'))
@@ -73,10 +73,12 @@ export default async function(options) {
     }
 
     // add alias for tsconfig.json> compilerOptions.paths
-    config.resolve.plugins.push(new TsconfigPathsPlugin({
-      configFile: join(rootDir, configFile),
-      baseUrl: rootDir,
-    }))
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: join(rootDir, configFile),
+        baseUrl: rootDir,
+      }),
+    )
 
     if(isDev){
       config.devtool = 'inline-source-map'
