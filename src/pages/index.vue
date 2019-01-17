@@ -3,15 +3,10 @@
 </template>
 
 <script lang="ts">
-import {
-  Component, Vue,
-} from 'nuxt-property-decorator'
+import {Component, Vue} from 'nuxt-property-decorator'
 
 @Component
-export default class Index extends Vue {
-
-}
+export default class Index extends Vue {}
 </script>
 
-<style scoped lang="stylus">
-</style>
+<style scoped lang="stylus"></style>
