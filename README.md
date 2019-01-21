@@ -33,3 +33,16 @@
 > yarn build
 
 ```
+
+## Reformat code files
+```bash
+> yarn reformat
+
+```
+
+## analyze bundle
+refer to `https://www.npmjs.com/package/webpack-bundle-analyzer`
+```bash
+> yarn analyze
+
+```
