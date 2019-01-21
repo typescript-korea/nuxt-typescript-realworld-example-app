@@ -40,7 +40,7 @@
 
 ```
 
-## analyze bundle
+## Analyze bundle
 refer to `https://www.npmjs.com/package/webpack-bundle-analyzer`
 ```bash
 > yarn analyze
