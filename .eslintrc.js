@@ -1,6 +1,5 @@
-/* eslint-disable max-len,no-magic-numbers */
 module.exports = {
-  plugins: ['html', 'typescript', 'import', 'vue'],
+  plugins: ['html', '@typescript-eslint', 'import', 'vue'],
   env: {
     'commonjs': true,
     'browser': true,
@@ -11,8 +10,15 @@ module.exports = {
   },
   settings: {
     'import/parsers': {
-      'typescript-eslint-parser': [ '.ts', '.tsx', 'vue'],
+      '@typescript-eslint/parser': [ '.ts', '.tsx', 'vue'],
     }
+  },
+  extends: ['eslint:recommended', 'plugin:vue/recommended', 'plugin:import/warnings'],
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+    useJSXTextNode: true,
+    jsx: true,
   },
   overrides: [
     {
@@ -61,13 +67,6 @@ module.exports = {
       }
     }
   ],
-  extends: ['eslint:recommended', 'plugin:vue/recommended', 'plugin:import/warnings'],
-  parserOptions: {
-    parser: 'typescript-eslint-parser',
-    sourceType: 'module',
-    useJSXTextNode: true,
-    jsx: true,
-  },
   rules: {
     /**************************************
      * import
@@ -207,26 +206,26 @@ module.exports = {
      * type script options
      *************************************/
     // off
-    'typescript/explicit-member-accessibility': 'off',
-    'typescript/interface-name-prefix': 'off',
-    'typescript/member-delimiter-style': 'off',
-    'typescript/member-ordering': 'off',
-    'typescript/no-empty-interface': 'off',
-    'typescript/no-explicit-any': 'off',
-    'typescript/no-type-alias': 'off',
-    'typescript/no-use-before-define ': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/member-ordering': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-type-alias': 'off',
+    '@typescript-eslint/no-use-before-define ': 'off',
     // on
-    'typescript/adjacent-overload-signatures': 'error',
-    'typescript/class-name-casing': 'error',
-    'typescript/member-naming': ['error', {'private': '^_'}],
-    'typescript/no-angle-bracket-type-assertion': 'error',
-    'typescript/no-array-constructor': 'error',
-    'typescript/no-namespace': 'error',
-    'typescript/no-parameter-properties': 'error',
-    'typescript/no-triple-slash-reference': 'error',
+    '@typescript-eslint/adjacent-overload-signatures': 'error',
+    '@typescript-eslint/class-name-casing': 'error',
+    '@typescript-eslint/member-naming': ['error', {'private': '^_'}],
+    '@typescript-eslint/no-angle-bracket-type-assertion': 'error',
+    '@typescript-eslint/no-array-constructor': 'error',
+    '@typescript-eslint/no-namespace': 'error',
+    '@typescript-eslint/no-parameter-properties': 'error',
+    '@typescript-eslint/no-triple-slash-reference': 'error',
     // it has an error
-    // 'typescript/no-unused-vars': 'error',
-    'typescript/type-annotation-spacing': [
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/type-annotation-spacing': [
       'error', {
         'before': false,
         'after': false,
