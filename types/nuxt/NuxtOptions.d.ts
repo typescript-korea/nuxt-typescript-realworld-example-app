@@ -1,5 +1,6 @@
 import {VueConstructor} from 'vue'
 import {Route} from 'vue-router'
+import * as builder from './Builder'
 import {KeyObject} from './KeyObject'
 import {Nuxt} from './Nuxt'
 import {Server} from './Server'
@@ -58,8 +59,8 @@ export interface NuxtHooksOptionsRender {
 }
 
 export interface NuxtHooksOptionsBuild {
-  before?: (nuxt: Nuxt, buildOptions: any) => void
-  templates?: (templatesFiles: any, templateVars: any, resolve: any) => void
+  before?: builder.hookBefore
+  templates?: builder.hookTemplates
   extendRoutes?: (routes: any, resolve: any) => void
   compile?: (name: string, compiler: any) => void
   compiled?: (name: string, compiler: any, stats: any) => void
