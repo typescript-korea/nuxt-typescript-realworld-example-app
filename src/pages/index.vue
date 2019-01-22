@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
+import {Component, Vue} from 'vue-ts'
 
 @Component
 export default class Index extends Vue {}
