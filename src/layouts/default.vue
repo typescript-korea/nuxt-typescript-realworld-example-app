@@ -6,11 +6,9 @@
 </template>
 
 <script lang="ts">
-import {
-  Component, Vue,
-} from 'nuxt-property-decorator'
-import AppHeader from '../components/appHeader.vue';
-import AppFooter from '../components/appFooter.vue';
+import {Component, Vue} from 'vue-ts'
+import AppHeader from '@/components/appHeader.vue'
+import AppFooter from '@/components/appFooter.vue'
 
 @Component({
   components: {

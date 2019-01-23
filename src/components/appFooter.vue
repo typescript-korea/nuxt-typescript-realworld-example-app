@@ -9,11 +9,7 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Prop,
-  Vue,
-} from 'nuxt-property-decorator'
+import {Component, Vue, Prop} from 'vue-ts'
 
 @Component({})
 export default class AppFooter extends Vue {
