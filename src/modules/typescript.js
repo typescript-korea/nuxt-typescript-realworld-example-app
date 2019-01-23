@@ -1,7 +1,10 @@
+import {join} from 'path'
 import {esModule} from '../utils'
 export default async function(options) {
   const webpack = esModule(await import('webpack'))
   const ForkTsCheckerWebpackPlugin = esModule(await import('fork-ts-checker-webpack-plugin'))
+  const TsconfigPathsPlugin = esModule(await import('tsconfig-paths-webpack-plugin'))
+  const {rootDir} = this.nuxt.options
   const {
     configFile = 'tsconfig.json',
     babel = {
@@ -63,6 +66,19 @@ export default async function(options) {
     if(config.resolve.extensions.indexOf('.tsx') === -1){
       config.resolve.extensions.push('.tsx')
     }
+
+    // For Ts paths
+    if(!config.resolve.plugins){
+      config.resolve.plugins = []
+    }
+
+    // add alias for tsconfig.json> compilerOptions.paths
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: join(rootDir, configFile),
+        baseUrl: rootDir,
+      }),
+    )
 
     if(isDev){
       config.devtool = 'inline-source-map'

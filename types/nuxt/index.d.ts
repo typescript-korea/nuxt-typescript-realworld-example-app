@@ -2,7 +2,6 @@
 // Project: https://github.com/nuxt
 // Definitions by: Bichi Kim <https://github.com/bichikim>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-
 declare module 'nuxt' {
   export {
     Builder,
@@ -53,7 +52,6 @@ declare module 'nuxt' {
     Listener,
   } from './Listener'
   export {
-    PluginContext,
     BeforeNuxtRenderCb,
     Plugin,
     ErrorFnParams,
@@ -62,4 +60,10 @@ declare module 'nuxt' {
     ReDirectFn,
     PluginInject,
   } from './Plugin'
+  export {
+    ClientContext,
+    Context,
+    ServerContext,
+  } from './Context'
 }
+

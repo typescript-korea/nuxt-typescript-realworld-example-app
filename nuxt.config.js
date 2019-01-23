@@ -1,20 +1,18 @@
 const config = {
-
   srcDir: './src',
 
   rootDir: './',
 
   /**
-   * index.html
+   * Index.html
    */
   head: {
     title: "Conduit",
     meta: [
-      { charset: "utf-8" },
+      {charset: 'utf-8'},
       {
-        name: "viewport",
-        content:
-          "width=device-width, initial-scale=1"
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
       },
     ],
     link: [
@@ -61,19 +59,12 @@ const config = {
     },
   },
 
-  watch: [
-    '~/**/*.ts',
-    '~/**/*.js',
-    '~/**/*.vue',
-    '~~/nuxt.config.js',
-  ],
+  watch: ['~/**/*.ts', '~/**/*.js', '~/**/*.vue', '~~/nuxt.config.js'],
 
   /*
    ** Build configuration
    */
-  modules: [
-    'modules/typescript.js',
-  ],
+  modules: ['modules/typescript.js'],
 }
 
-export default () => (config)
+export default () => config
