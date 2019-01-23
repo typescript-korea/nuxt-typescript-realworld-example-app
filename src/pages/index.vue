@@ -3,10 +3,10 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-ts'
+import {Component, Mixins} from 'vue-ts'
 
 @Component
-export default class Index extends Vue {}
+export default class Index {}
 </script>
 
 <style scoped lang="stylus"></style>
