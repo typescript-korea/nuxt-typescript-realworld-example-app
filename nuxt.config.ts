@@ -1,4 +1,5 @@
-const config = {
+import {NuxtOptions} from 'nuxt-ts'
+const config: NuxtOptions = {
   srcDir: './src',
 
   rootDir: './',
@@ -44,7 +45,7 @@ const config = {
   /*
    ** Build configuration
    */
-  modules: ['modules/typescript.js'],
+  modules: ['modules/typescript-paths.ts'],
 }
 
 export default () => config

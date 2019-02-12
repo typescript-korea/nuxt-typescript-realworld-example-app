@@ -2,7 +2,7 @@
 // Project: https://github.com/nuxt
 // Definitions by: Bichi Kim <https://github.com/bichikim>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-declare module 'nuxt' {
+declare module 'nuxt-ts' {
   export {
     Builder,
   } from './Builder'

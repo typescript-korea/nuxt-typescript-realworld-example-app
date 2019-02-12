@@ -8,18 +8,18 @@
   "contributors": [],
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt-ts dev",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
     "reformat": "prettier-eslint --write src/**/*.js src/**/*.ts src/**/*.vue test/**/*.ts type/**/*.ts nuxt.config.js",
-    "analyze": "nuxt build -a"
+    "analyze": "nuxt-ts build -a"
   },
   "dependencies": {
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "fs-extra": "^7.0.1",
     "globby": "^8.0.1",
     "lodash": "^4.17.11",
-    "nuxt": "^2.3.4",
+    "nuxt-ts": "^2.4.3",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^7.2.0",
