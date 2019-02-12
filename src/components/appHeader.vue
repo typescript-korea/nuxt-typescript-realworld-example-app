@@ -4,16 +4,20 @@
       nuxt-link.navbar-brand(to="/") {{ siteName }}
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
-          nuxt-link.nav-link(to="/") Home
+          nuxt-link.nav-link(to="/")
+            span.content Home
         li.nav-item
           nuxt-link.nav-link(to="/post")
-            i.ion-compose &nbsp;New Post
+            i.ion-compose
+              span.content New Post
         li.nav-item
           nuxt-link.nav-link(to="/settings")
-            i.ion-gear-a &nbsp;Settings
+            i.ion-gear-a
+            span.content Settings
         li.nav-item
-          nuxt-link.nav-link(to="/register") Sign up
-          
+          nuxt-link.nav-link(to="/register")
+            span.content Sign up
+
 </template>
 
 <script lang="ts">
@@ -26,4 +30,7 @@ export default class AppHeader extends Vue {
 </script>
 
 <style scoped lang="stylus">
+  .content
+    padding-left 5px
+    padding-right 5px
 </style>
